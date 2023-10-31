@@ -1,7 +1,7 @@
 <ion-tabs>
 
   <ion-fab vertical="bottom" horizontal="center" translucent="true">
-    <ion-fab-button >
+    <ion-fab-button (click)="navigateHome()">
       <ion-icon name="star"></ion-icon>
     </ion-fab-button>
   </ion-fab>
@@ -13,7 +13,7 @@
 
     <ion-tab-button tab="tab2" class="comments">
       <ion-icon name="chatbubbles"></ion-icon>
-      <ion-badge *ngIf="true">7</ion-badge>
+      <ion-badge color="danger" *ngIf="true">7</ion-badge>
     </ion-tab-button>
 
     <svg height="50" viewBox="0 0 100 50" width="100" xmlns="http://www.w3.org/2000/svg">
@@ -22,7 +22,7 @@
 
     <ion-tab-button tab="tab3" class="notifs">
       <ion-icon name="notifications"></ion-icon>
-      <ion-badge *ngIf="true">2</ion-badge>
+      <ion-badge color="danger" *ngIf="true">2</ion-badge>
     </ion-tab-button>
 
     <ion-tab-button tab="tab4">
