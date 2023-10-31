@@ -1,5 +1,9 @@
 {
-    "recommendations": [
-      "ionic.ionic"
-    ]
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "ionic.ionic",
+    "Angular.ng-template",
+    "cyrilletuzi.angular-schematics",
+    "eamodio.gitlens",
+  ]
 }
