@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
-import { HomeComponent } from '../features/home/home.component';
+import { ROUTES } from '../routes';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: ROUTES.tabs.root,
     component: TabsPage,
     children: [
       {
-        path: 'home',
-        component: HomeComponent
+        path: ROUTES.tabs.home,
+        loadComponent: () => import('../features/home/home.component').then(m => m.HomeComponent)
       },
       {
         path: 'tab1',
@@ -30,14 +30,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/home',
+        redirectTo: `/${ROUTES.tabs.root}/${ROUTES.tabs.home}`,
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/home',
+    redirectTo: `/${ROUTES.tabs.root}/${ROUTES.tabs.home}`,
     pathMatch: 'full'
   }
 ];
