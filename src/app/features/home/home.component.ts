@@ -1,3 +1,6 @@
+// Module imports
+import { IonicModule } from '@ionic/angular';
+
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
@@ -5,7 +8,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   standalone: true,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    IonicModule,
+  ]
 })
 export class HomeComponent {
 
