@@ -9,13 +9,13 @@ import { TabsPage } from './tabs.page';
 import { HomeComponent } from '../features/home/home.component';
 
 @NgModule({
-  imports: [
-    IonicModule,
-    CommonModule,
-    FormsModule,
-    TabsPageRoutingModule,
-    HomeComponent,
-  ],
-  declarations: [TabsPage]
+    imports: [
+        IonicModule,
+        CommonModule,
+        FormsModule,
+        TabsPageRoutingModule,
+        HomeComponent,
+        TabsPage,
+    ]
 })
 export class TabsPageModule { }
