@@ -1,8 +1,44 @@
 <ion-content class="ion-padding">
-  <h1>Progress</h1>
+  <h1>Progreso: {{ progress }} %</h1>
+  <ion-progress-bar class="ion-margin-vertical" [value]="progress / 100"></ion-progress-bar>
 
-  <ion-list [style.background]="'transparent'">
-    <p>Tareas completadas: 7</p>
-    <p>Tareas pendientes: 3</p>
-  </ion-list>
+  <ion-note>El progreso se muestra en modo de porcentaje dado que cada tarea tiene una puntuación diferente, y con estos
+    se alcanzan los puntos ajustados para alcanzar cada límite periódico (semanal, mensual, ...)</ion-note>
+
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>Tareas pendientes</ion-label>
+    </ion-item-divider>
+    @for (todoTask of todoTaskList(); track todoTask.id) {
+    <ion-item>
+      <ion-badge class="ion-padding-horizontal ion-margin-end" color="primary">
+        {{ todoTask.points }}
+      </ion-badge>
+      <ion-label>{{ todoTask.label }}</ion-label>
+      <ion-checkbox slot="end"></ion-checkbox>
+    </ion-item>
+    } @empty {
+    Ya has completado todas las tares en el backlog
+    <ion-button expand="block" fill="clear" shape="round">
+      Añadir tarea
+    </ion-button>
+    }
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>Tareas completadas</ion-label>
+    </ion-item-divider>
+    @for (doneTask of doneTaskList(); track doneTask.id) {
+    <ion-item>
+      <ion-badge class="ion-padding-horizontal ion-margin-end" color="primary">
+        {{ doneTask.points }}
+      </ion-badge>
+      <ion-label>{{ doneTask.label }}</ion-label>
+      <ion-checkbox slot="end" checked="true"></ion-checkbox>
+
+    </ion-item>
+    }
+  </ion-item-group>
+
 </ion-content>
